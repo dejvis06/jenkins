@@ -1,4 +1,6 @@
 
+Download, install and run:
+
 Docker: (https://www.jenkins.io/doc/book/installing/docker/)
 
 	. docker pull jenkins/jenkins:lts-jdk11
