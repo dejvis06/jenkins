@@ -6,6 +6,15 @@ pipeline {
             }
         }
     stages {
+
+        stage('Directories'){
+            steps {
+                dh = new File('.')
+                dh.eachFileRecurse {
+                    println it
+                }
+            }
+        }
         stage('Build') {
             steps {
                 sh "mvn clean install -DskipTests"
