@@ -6,19 +6,6 @@ pipeline {
             }
         }
     stages {
-
-        stage('CLONE') {
-            steps {
-                echo '--CLONE STAGE EXECUTION ---'
-                git clone 'https://github.com/dejvis06/spring-batch.git'
-            }
-        }
-        stage('Directories') {
-            steps {
-                 sh "cd .."
-                 sh "ls"
-            }
-        }
         stage('Build') {
             steps {
                 sh "mvn clean install -DskipTests"
