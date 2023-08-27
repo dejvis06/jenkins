@@ -9,6 +9,7 @@ pipeline {
 
         stage('Directories') {
             steps {
+                 sh "cd .."
                  sh "ls"
             }
         }
