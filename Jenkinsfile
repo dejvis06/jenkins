@@ -7,12 +7,10 @@ pipeline {
         }
     stages {
 
-        stage('Directories'){
+        stage('Directories') {
             steps {
-                dh = new File('.')
-                dh.eachFileRecurse {
-                    println it
-                }
+                 def files = findFiles(glob: '*.*')
+                 echo """${files[0].name} ${files[0].path} ${files[0].directory} ${files[0].length} ${files[0].lastModified}"""
             }
         }
         stage('Build') {
